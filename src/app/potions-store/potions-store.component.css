@@ -1,0 +1,55 @@
+/*WORKS BEAM*/
+.energy-beam {
+  position: relative;
+  height: 6px;
+  width: 100%;
+  background:#004f4f;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.energy-beam.animate::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, cyan, magenta);
+  animation: beam 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes beam {
+  0%   { transform: scaleX(0); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+/*WORKS BEAM*/
+
+/*WORKS POTIONS ----------------------------------------------------- */
+.potion {
+  margin: 25px 0;
+  border-radius: 3px;
+  color: black;
+  /* border-left: 5px solid #00fbfb; */
+}
+
+.effect {
+  display: flex;
+  align-items: center;          /* vertical alignment */
+  gap: 12px;                    /* spacing between image & text */
+  font-size: 27px;
+}
+
+.effect-text {
+  display: flex;
+  flex-direction: column;       /* stack h3 + p */
+  justify-content: left;      /* center vertically within total height */
+}
+
+.effect-text h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  text-align: left;
+}
+/*WORKS POTIONS ----------------------------------------------------- */

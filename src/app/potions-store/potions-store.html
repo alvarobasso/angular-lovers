@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="topic">
+    <h1>
+      <!-- <img src="icons/science-2.gif" alt="Lab Icon" class="excercise-title-icon"> -->
+      Dependency Injection
+    </h1>
+
+    <h3>¿Qué es Dependency Injection (DI)?</h3>
+    <p class="explanation-text">
+      <span>Dependency Injection (DI)</span> es un patrón de diseño donde Angular se encarga
+      de crear y entregar (inyectar) los objetos que una clase necesita,
+      en lugar de que la clase los cree por sí misma.
+      En otras palabaras: DI es un sistema automático que crea servicios, los organiza, los comparte
+      y se los entrega a los componentes que los necesitan. Así, tus componentes no construyen
+      dependencias, solo las reciben.
+    </p>
+
+    <h3>¿Para qué sirve en Angular?</h3>
+    <ul>
+      <li>Separa responsabilidades (SRP)</li>
+      <li>Hace tu código modular</li>
+      <li>Más fácil de testear</li>
+      <li>Reutilizas servicios en muchos componentes</li>
+      <li>Angular administra instancias automáticamente</li>
+    </ul>
+    <p class="explanation-text"></p>
+    <h3>Ejemplo: La tienda de pociones</h3>
+    <p class="explanation-text">
+      La tienda <span>PotionsStoreComponent </span> vende pociones. En lugar de prepararlas en la tienda, se las
+      pide al
+      laboratorio de pociones <span> PotionsLabService </span> este servicio representa al "proveedor" de
+      pociones.
+    </p>
+    <p class="explanation-text">
+      El componente no crea el servicio solo lo pide, y Angular se lo entrega, asì cada poción viene directamente
+      del servicio inyectado.
+    </p>
+    <p class="explanation-text">
+      <span>Angular Dependency Injection (DI) </span> Es el intermediario mágico lleva
+      las pociones del laboratorio a la tienda sin que ellos se conozcan directamente.
+    </p>
+
+    <h3>Da un vistazo al código</h3>
+    <div class="row-align">
+      <mat-icon svgIcon="angular-blue" class="my-icon"></mat-icon>
+      potions-store.component.ts
+    </div>
+    <div class="row-align">
+      <mat-icon svgIcon="angular-yellow" class="my-icon"></mat-icon>
+      potions-lab.service.ts
+    </div>
+
+  </div>
+  <div class="excercise">
+    <div class="content-zone">
+      <h1>
+        <img src="icons/book.gif" alt="Lab Icon" class="excercise-title-icon">
+        DI Magic Lab
+      </h1>
+
+      <p class="subtitle">Watch how Angular provides services to components
+        brew new potions using Dependency Injection!
+      </p>
+
+      <div class="excercise-actions">
+
+        <div class="animate__animated animate__swing" *ngIf="showButton">
+          <button mat-fab extended (click)="craftPotion()" color="primary">
+            <mat-icon>flash_on</mat-icon>
+            Brew New Potion
+          </button>
+        </div>
+
+        <div class=" animate__animated animate__swing" *ngIf="showGif">
+          <img src="icons/laboratory.gif" alt="Lab Icon" class="excercise-demo-icon">
+        </div>
+
+      </div>
+      <!-- Potions -->
+      <h2>My potions</h2>
+      <div class="energy-beam" [class.animate]="injectorActive"></div>
+
+      <div *ngFor="let p of potions" class="animate__animated animate__fadeIn">
+        <div class="potion">
+          <div class="effect">
+            <img src="icons/{{ p.effect.img }}" alt="" class="icon-big">
+            <div class="effect-text">
+              <h4>{{ p.effect.name }}</h4>
+              <p class="excercise-text">{{ p.effect.effect }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <a href="https://www.flaticon.com/free-animated-icons/chemistry" title="chemistry animated icons">Chemistry animated icons created by Freepik - Flaticon</a> -->
+</div>

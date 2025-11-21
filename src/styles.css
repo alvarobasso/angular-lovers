@@ -1,1 +1,160 @@
-/* You can add global styles to this file, and also import other style files */
+/* === Base Typography === */
+:root {
+    --font-body: 'Vend Sans', sans-serif;
+    --magic-border-gradient: linear-gradient(45deg, #00d4ff, #ff00aa);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Body reset + smoothness */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+}
+
+.explanation-text {
+    line-height: 1.7;
+    margin: 10px 25px 30px!important ;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.excercise-text {
+    font-size: 1.2rem;
+}
+
+span {
+    color: #00fbfb;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-heading);
+    margin: 0 0 10px;
+}
+
+h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.3rem !important;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.6rem !important;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.3rem !important;
+    font-weight: normal;
+    border-left: #00fbfb 15px solid;
+    padding-left: 10px;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    height: 35px;
+}
+h4 {
+    font-size: 1.2rem !important;
+    font-weight: normal;
+    text-align: left;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    margin-bottom: 0px!important;
+}
+
+.icon-big {
+    width: 90px;
+    height: 90px;
+    vertical-align: middle;
+    padding-bottom: 0px;
+    object-fit: contain;
+}
+
+.excercise-title-icon {
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    object-fit: contain;
+}
+
+.excercise-demo-icon {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 25px;
+    opacity: 0.85;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    border: 1px solid #ccc;
+    ;
+}
+
+
+.topic {
+    width: 60%;
+    background: radial-gradient(circle at 50% 20%, #1f2339, #0d0f19);
+    padding: 20px;
+    min-height: 100vh;
+    color: white;
+    padding: 25px 55px;
+    text-align: justify;
+}
+
+.excercise {
+    width: 40%;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.excercise-actions {
+    height: 80px;
+    margin: 40px 0;
+    justify-content: center !important;
+    place-items: center !important;
+    align-items: center;
+    display: flex;
+}
+
+.lab-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.my-icon {
+  width: 25px;
+  height: 25px;
+  color: #ff4081; /* Change color */
+  flex-shrink: 0;
+}
+
+.row-align {
+  display: flex;
+  align-items: center;   /* Alinea verticalmente */
+  gap: 8px;              /* Espacio entre icono y texto */
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-left: 25px;
+}
