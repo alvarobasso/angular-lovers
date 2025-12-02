@@ -6,11 +6,10 @@ import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-potion-lab',
-  standalone: true,
-  imports: [CommonModule, MaterialModule, MatIconModule],
-  templateUrl: './potions-store.html',
-  styleUrl: './potions-store.component.css'
+    selector: 'app-potion-lab',
+    imports: [CommonModule, MaterialModule, MatIconModule],
+    templateUrl: './potions-store.html',
+    styleUrl: './potions-store.component.css'
 })
 export class PotionsStoreComponent {
   potions: any[] = [];

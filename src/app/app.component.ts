@@ -4,11 +4,10 @@ import { TopBarMenuComponent } from './shared/top-bar-menu/top-bar-menu.componen
 import { TopicsListComponent } from './shared/topics-list/topics-list.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, TopBarMenuComponent, TopicsListComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: 'app-root',
+    imports: [RouterOutlet, TopBarMenuComponent, TopicsListComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angular-lovers';
