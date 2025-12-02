@@ -1,11 +1,11 @@
-<div class="container">
+<div class="topic-container">
   <div class="topic">
     <h1>
       <!-- <img src="icons/science-2.gif" alt="Lab Icon" class="excercise-title-icon"> -->
       Dependency Injection
     </h1>
 
-    <h3>¿Qué es Dependency Injection (DI)?</h3>
+    <h3 class="h3-topic">¿Qué es Dependency Injection (DI)?</h3>
     <p class="explanation-text">
       <span>Dependency Injection (DI)</span> es un patrón de diseño donde Angular se encarga
       de crear y entregar (inyectar) los objetos que una clase necesita,
@@ -15,7 +15,7 @@
       dependencias, solo las reciben.
     </p>
 
-    <h3>¿Para qué sirve en Angular?</h3>
+    <h3 class="h3-topic">¿Para qué sirve en Angular?</h3>
     <ul>
       <li>Separa responsabilidades (SRP)</li>
       <li>Hace tu código modular</li>
@@ -24,7 +24,7 @@
       <li>Angular administra instancias automáticamente</li>
     </ul>
     <p class="explanation-text"></p>
-    <h3>Ejemplo: La tienda de pociones</h3>
+    <h3 class="h3-topic">Ejemplo: La tienda de pociones</h3>
     <p class="explanation-text">
       La tienda <span>PotionsStoreComponent </span> vende pociones. En lugar de prepararlas en la tienda, se las
       pide al
@@ -40,7 +40,7 @@
       las pociones del laboratorio a la tienda sin que ellos se conozcan directamente.
     </p>
 
-    <h3>Da un vistazo al código</h3>
+    <h3 class="h3-topic">Da un vistazo al código</h3>
     <div class="row-align">
       <mat-icon svgIcon="angular-blue" class="my-icon"></mat-icon>
       potions-store.component.ts
@@ -52,42 +52,40 @@
 
   </div>
   <div class="excercise">
-    <div class="content-zone">
-      <h1>
-        <img src="icons/book.gif" alt="Lab Icon" class="excercise-title-icon">
-        DI Magic Lab
-      </h1>
+    <h1>
+      <img src="icons/book.gif" alt="Lab Icon" class="excercise-title-icon">
+      DI Magic Lab
+    </h1>
 
-      <p class="subtitle">Watch how Angular provides services to components
-        brew new potions using Dependency Injection!
-      </p>
+    <p class="subtitle">Watch how Angular provides services to components
+      brew new potions using Dependency Injection!
+    </p>
 
-      <div class="excercise-actions">
+    <div class="excercise-actions">
 
-        <div class="animate__animated animate__swing" *ngIf="showButton">
-          <button mat-fab extended (click)="craftPotion()" color="primary">
-            <mat-icon>flash_on</mat-icon>
-            Brew New Potion
-          </button>
-        </div>
+      <div class="fab-wrapper" *ngIf="showButton">
+    <button matFab extended (click)="craftPotion()">
+      <mat-icon>flash_on</mat-icon>
+      Brew New Potion
+    </button>
+  </div>
 
-        <div class=" animate__animated animate__swing" *ngIf="showGif">
-          <img src="icons/laboratory.gif" alt="Lab Icon" class="excercise-demo-icon">
-        </div>
-
+      <div *ngIf="showGif">
+        <img src="icons/laboratory.gif" alt="Lab Icon" class="excercise-demo-icon">
       </div>
-      <!-- Potions -->
-      <h2>My potions</h2>
-      <div class="energy-beam" [class.animate]="injectorActive"></div>
 
-      <div *ngFor="let p of potions" class="animate__animated animate__fadeIn">
-        <div class="potion">
-          <div class="effect">
-            <img src="icons/{{ p.effect.img }}" alt="" class="icon-big">
-            <div class="effect-text">
-              <h4>{{ p.effect.name }}</h4>
-              <p class="excercise-text">{{ p.effect.effect }}</p>
-            </div>
+    </div>
+    <!-- Potions -->
+    <h2>My potions</h2>
+    <div class="energy-beam" [class.animate]="injectorActive"></div>
+
+    <div *ngFor="let p of potions" class="animate__animated animate__fadeIn">
+      <div class="potion">
+        <div class="effect">
+          <img src="icons/{{ p.effect.img }}" alt="" class="icon-big">
+          <div class="effect-text">
+            <h4>{{ p.effect.name }}</h4>
+            <p class="excercise-text">{{ p.effect.effect }}</p>
           </div>
         </div>
       </div>

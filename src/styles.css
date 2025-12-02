@@ -1,4 +1,4 @@
-/* === Base Typography === */
+/* ------------------------------------GENERALS------------------------------------ */
 :root {
     --font-body: 'Vend Sans', sans-serif;
     --magic-border-gradient: linear-gradient(45deg, #00d4ff, #ff00aa);
@@ -9,26 +9,10 @@ body {
     height: 100%;
 }
 
-/* Body reset + smoothness */
 body {
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
-}
-
-.explanation-text {
-    line-height: 1.7;
-    margin: 10px 25px 30px!important ;
-    color: var(--color-text);
-    font-size: 1rem;
-}
-
-.excercise-text {
-    font-size: 1.2rem;
-}
-
-span {
-    color: #00fbfb;
 }
 
 h1,
@@ -56,21 +40,35 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
     font-weight: normal;
-    border-left: #00fbfb 15px solid;
-    padding-left: 10px;
-    padding-top: 0!important;
-    padding-bottom: 0!important;
-    height: 35px;
+    text-align: left;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0px !important;
 }
+
 h4 {
     font-size: 1.2rem !important;
     font-weight: normal;
     text-align: left;
-    padding-top: 0!important;
-    padding-bottom: 0!important;
-    margin-bottom: 0px!important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0px !important;
+}
+
+.h3-topic {
+    font-size: 1.3rem !important;
+    font-weight: normal;
+    border-left: #00fbfb 15px solid;
+    padding-left: 10px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 35px;
+}
+
+span {
+    color: #00fbfb;
 }
 
 .icon-big {
@@ -79,6 +77,97 @@ h4 {
     vertical-align: middle;
     padding-bottom: 0px;
     object-fit: contain;
+}
+
+/* --------------------------------END GENERALS------------------------------- */
+/* ------------------------------------APP------------------------------------ */
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-menu {
+    height: 60px;
+    width: 100%;
+    background-color: #004f4f;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: fixed;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 60px auto 0 auto;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.app-topics-list {
+    position: fixed;
+    top: 12%;
+    right: 15%;
+    padding-left: 15px;
+    z-index: 9999;
+    border-left: #003838 2px solid;
+}
+
+.app-components {
+    width: 80%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------END APP------------------------------------ */
+/* -------------------------------------TOPIC------------------------------------- */
+.topic-container {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.explanation-text {
+    line-height: 1.7;
+    margin: 10px 25px 30px !important;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.topic {
+    width: 50%;
+    background: radial-gradient(circle at 50% 20%, #1f2339, #0d0f19);
+    padding: 20px;
+    color: white;
+    padding: 25px 55px;
+    text-align: justify;
+}
+
+/* ------------------------------------END TOPIC---------------------------------- */
+/* -----------------------------------EXCERCISE----------------------------------- */
+.excercise {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.excercise-actions {
+    height: 80px;
+    margin: 40px 0;
+    justify-content: center !important;
+    place-items: center !important;
+    align-items: center;
+}
+
+
+.excercise-text {
+    font-size: 1.2rem;
 }
 
 .excercise-title-icon {
@@ -96,47 +185,6 @@ h4 {
     margin: 0 auto;
 }
 
-.subtitle {
-    font-size: 20px;
-    margin-bottom: 25px;
-    opacity: 0.85;
-}
-
-.container {
-    margin: 0 auto;
-    width: 80%;
-    display: flex;
-    border: 1px solid #ccc;
-    ;
-}
-
-
-.topic {
-    width: 60%;
-    background: radial-gradient(circle at 50% 20%, #1f2339, #0d0f19);
-    padding: 20px;
-    min-height: 100vh;
-    color: white;
-    padding: 25px 55px;
-    text-align: justify;
-}
-
-.excercise {
-    width: 40%;
-    position: relative;
-    padding: 20px;
-    text-align: center;
-}
-
-.excercise-actions {
-    height: 80px;
-    margin: 40px 0;
-    justify-content: center !important;
-    place-items: center !important;
-    align-items: center;
-    display: flex;
-}
-
 .lab-title {
     display: flex;
     align-items: center;
@@ -144,17 +192,40 @@ h4 {
 }
 
 .my-icon {
-  width: 25px;
-  height: 25px;
-  color: #ff4081; /* Change color */
-  flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    color: #ff4081;
+    /* Change color */
+    flex-shrink: 0;
 }
 
 .row-align {
-  display: flex;
-  align-items: center;   /* Alinea verticalmente */
-  gap: 8px;              /* Espacio entre icono y texto */
-  font-size: 18px;
-  margin-bottom: 10px;
-  padding-left: 25px;
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente */
+    gap: 8px;
+    /* Espacio entre icono y texto */
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 25px;
 }
+
+/* ------------------------------------END EXCERCISE------------------------------------ */
+/* -------------------------------------TOPIC LIST-------------------------------------- */
+.mat-list-item {
+    padding: 0 10px !important;
+    height: 30px !important;
+}
+
+.topics-links {
+    text-decoration: none;
+    color: #004f4f;
+    font-size: 16px;
+    margin: 0 !important;
+}
+
+.topics-links:hover {
+    color: #003838;
+}
+
+/* ------------------------------------END TOPIC LIST------------------------------------ */
