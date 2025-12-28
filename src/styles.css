@@ -57,18 +57,12 @@ h4 {
     margin-bottom: 0px !important;
 }
 
-.h3-topic {
-    font-size: 1.3rem !important;
-    font-weight: normal;
-    border-left: #00fbfb 15px solid;
-    padding-left: 10px;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    height: 35px;
-}
-
 span {
     color: #00fbfb;
+}
+
+.label{
+    color: #004f4f;
 }
 
 .icon-big {
@@ -78,7 +72,6 @@ span {
     padding-bottom: 0px;
     object-fit: contain;
 }
-
 /* --------------------------------END GENERALS------------------------------- */
 /* ------------------------------------APP------------------------------------ */
 .app-wrapper {
@@ -98,27 +91,23 @@ span {
 }
 
 .app-container {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: 60px auto 0 auto;
-    margin-bottom: 50px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 100px auto 50px auto;
+  box-sizing: border-box;
+  gap: 24px;
 }
 
-.app-topics-list {
-    position: fixed;
-    top: 12%;
-    right: 15%;
-    padding-left: 15px;
-    z-index: 9999;
-    border-left: #003838 2px solid;
-}
-
+/* LEFT SIDE */
 .app-components {
-    width: 80%;
-    display: flex;
-    box-sizing: border-box;
+  flex: 1; /* takes remaining space */
+}
+
+/* RIGHT SIDE */
+.app-topics-list {
+  width: 300px; /* fixed sidebar width */
+  padding-left: 15px;
 }
 
 /* ------------------------------------END APP------------------------------------ */
@@ -130,25 +119,36 @@ span {
 
 .explanation-text {
     line-height: 1.7;
-    margin: 10px 25px 30px !important;
+    margin: 10px 0px 30px !important;
     color: var(--color-text);
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .topic {
     width: 50%;
-    background: radial-gradient(circle at 50% 20%, #1f2339, #0d0f19);
-    padding: 20px;
-    color: white;
-    padding: 25px 55px;
+    /* background: radial-gradient(circle at 50% 20%, #1f2339, #0d0f19); */
+    padding: 0px 10px;
+    color: black;
     text-align: justify;
+    /* border: 1px solid #000; */
+}
+
+.h3-topic {
+    font-size: 1.3rem !important;
+    font-weight: normal;
+    border-left: #004f4f 10px solid;
+    padding-left: 10px;
+    padding-top: 0!important;
+    padding-bottom: 0 !important;
+    height: 25px; 
+    /* border: 1px solid #000; */
 }
 
 /* ------------------------------------END TOPIC---------------------------------- */
 /* -----------------------------------EXCERCISE----------------------------------- */
 .excercise {
     width: 50%;
-    padding: 20px;
+    padding: 0 20px;
     text-align: center;
 }
 
@@ -164,7 +164,6 @@ span {
     place-items: center !important;
     align-items: center;
 }
-
 
 .excercise-text {
     font-size: 1.2rem;

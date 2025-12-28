@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { MaterialModule } from '../material/material.module';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
-    selector: 'app-topics-list',
-    imports: [MaterialModule],
-    templateUrl: './topics-list.component.html',
-    styleUrl: './topics-list.component.css'
+  standalone: true,
+  selector: 'app-topics-list',
+  imports: [MatListModule],
+  templateUrl: './topics-list.component.html',
+  styleUrls: ['./topics-list.component.css']
 })
-export class TopicsListComponent {
-
-}
+export class TopicsListComponent {}

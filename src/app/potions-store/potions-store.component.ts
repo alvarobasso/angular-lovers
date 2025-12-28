@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { PotionsLabService } from './potions-lab.service';
-import { CommonModule } from '@angular/common';
+
 import { MaterialModule } from '../shared/material/material.module';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-potion-lab',
-    imports: [CommonModule, MaterialModule, MatIconModule],
+    imports: [MaterialModule, MatIconModule],
     templateUrl: './potions-store.html',
     styleUrl: './potions-store.component.css'
 })

@@ -4,6 +4,7 @@ import { TopBarMenuComponent } from './shared/top-bar-menu/top-bar-menu.componen
 import { TopicsListComponent } from './shared/topics-list/topics-list.component';
 
 @Component({
+    standalone: true,
     selector: 'app-root',
     imports: [RouterOutlet, TopBarMenuComponent, TopicsListComponent],
     templateUrl: './app.component.html',

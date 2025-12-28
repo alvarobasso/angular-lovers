@@ -9,6 +9,7 @@
 .top-bar-menu button {
     color: white;
     margin: 8px;
+    background-color:transparent;
 }
 
 .top-bar-menu button:hover {
