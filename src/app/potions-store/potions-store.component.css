@@ -1,29 +1,3 @@
-.energy-beam {
-  position: relative;
-  height: 6px;
-  width: 100%;
-  background:#004f4f;
-  margin: 20px 0;
-  overflow: hidden;
-}
-
-.energy-beam.animate::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(90deg, cyan, magenta);
-  animation: beam 1s ease-out forwards;
-  pointer-events: none;
-}
-
-@keyframes beam {
-  0%   { transform: scaleX(0); opacity: 1; }
-  100% { transform: scaleX(1); opacity: 1; }
-}
-
 .potion {
   margin: 25px 0;
   border-radius: 3px;
@@ -33,12 +7,11 @@
 .effect {
   display: flex;
   align-items: center;
-  gap: 12px;
   font-size: 27px;
+  text-align: center;
 }
 
 .effect-text {
-  display: flex;
   flex-direction: column;
   justify-content: left;
 }
@@ -47,4 +20,35 @@
   margin: 0;
   font-size: 1.3rem;
   text-align: left;
+}
+
+
+.action-card {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  border-radius: 16px;
+  border: 1px solid #004f4f;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.action-left {
+  width: 70%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.action-right {
+  width: 30%;
+}
+
+.action-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 16px 16px 0;
+  box-shadow: none;
 }

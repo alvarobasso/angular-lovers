@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import { PotionsLabService } from './potions-lab.service';
-
 import { MaterialModule } from '../shared/material/material.module';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { IPotion } from './potions-lab-interface';
 
 @Component({
-    selector: 'app-potion-lab',
-    imports: [MaterialModule, MatIconModule],
-    templateUrl: './potions-store.html',
-    styleUrl: './potions-store.component.css'
+  selector: 'app-potion-lab',
+  imports: [MaterialModule, MatIconModule],
+  templateUrl: './potions-store.html',
+  styleUrl: './potions-store.component.css',
 })
 export class PotionsStoreComponent {
-  potions: any[] = [];
-  injectorActive = false;
-  showButton = true;
-  showGif = false;
+  potion: IPotion | null = null;
+  animateEffect = true;
 
   constructor(
     private potionService: PotionsLabService,
@@ -23,41 +21,32 @@ export class PotionsStoreComponent {
     private sanitizer: DomSanitizer
   ) {
     this.iconRegistry.addSvgIcon(
-    'angular-yellow',
-    this.sanitizer.bypassSecurityTrustResourceUrl('icons/angular/angular-yellow.svg')
+      'angular-yellow',
+      this.sanitizer.bypassSecurityTrustResourceUrl(
+        'icons/angular/angular-yellow.svg'
+      )
     );
 
     this.iconRegistry.addSvgIcon(
-    'angular-blue',
-    this.sanitizer.bypassSecurityTrustResourceUrl('icons/angular/angular-blue.svg')
+      'angular-blue',
+      this.sanitizer.bypassSecurityTrustResourceUrl(
+        'icons/angular/angular-blue.svg'
+      )
     );
 
     this.iconRegistry.addSvgIcon(
-    'angular-red',
-    this.sanitizer.bypassSecurityTrustResourceUrl('icons/angular/angular-red.svg')
+      'angular-red',
+      this.sanitizer.bypassSecurityTrustResourceUrl(
+        'icons/angular/angular-red.svg'
+      )
     );
   }
 
   craftPotion() {
-    this.showButton = false;
-    this.showGif = true;
-    // Activate Injector animation
-    this.injectorActive = true;
-
-    // Deactivate after 500ms
+    this.potion = this.potionService.brewPotion(this.potion);
+    this.animateEffect = false;
     setTimeout(() => {
-      this.injectorActive = false;
-      this.showButton = true;
-      this.showGif = false;
-    }, 3000);
-
-    // Create potion normally
-    const potion = this.potionService.brewPotion();
-    this.potions.push(potion);
-
-    // Remove potion after animation
-    setTimeout(() => {
-      this.potions = this.potions.filter(p => p.id !== potion.id);
-    }, 10000);
+      this.animateEffect = true;
+    });
   }
 }
