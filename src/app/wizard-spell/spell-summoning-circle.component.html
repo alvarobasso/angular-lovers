@@ -1,13 +1,83 @@
-<button
-  mat-fab
-  extended
-  color="warn"
-  (click)="toggleWizard()">
+<div class="topic-container">
+  <!-- LEFT: Theory -->
+  <div class="topic">
+    <h1>Lifecycle Hooks</h1>
 
-  <mat-icon>{{ summonWizard ? 'close' : 'auto_fix_high' }}</mat-icon>
-  {{ summonWizard ? 'Dismiss Wizard' : 'Summon Wizard' }}
-</button>
+    <h3 class="h3-topic">¿Qué son los Lifecycle Hooks?</h3>
+    <p class="explanation-text">
+      Son métodos especiales que Angular llama automáticamente en momentos
+      clave de la vida de un componente: cuando se crea, cuando cambian sus
+      datos, cuando se renderiza su vista, y cuando se destruye. Piensa en ellos
+      como "eventos" que te permiten ejecutar código en el momento exacto.
+    </p>
 
-<br /><br />
+    <h3 class="h3-topic">¿Para qué sirven?</h3>
+    <ul>
+      <li>Inicializar datos cuando el componente arranca</li>
+      <li>Reaccionar a cambios en los &#64;Input()</li>
+      <li>Limpiar recursos (subscriptions, timers) al destruirse</li>
+      <li>Ejecutar lógica después de que la vista esté lista</li>
+      <li>Detectar cambios personalizados con ngDoCheck</li>
+    </ul>
 
-<app-wizard-spell *ngIf="summonWizard"></app-wizard-spell>
+    <h3 class="h3-topic">Ejemplo: El Hechizo del Mago</h3>
+    <p class="explanation-text">
+      Imagina que un <span class="label">WizardSpellComponent</span> es un hechizo
+      que invocas al mundo. El hechizo pasa por fases: es invocado
+      (<span class="label">constructor</span>, <span class="label">ngOnInit</span>),
+      canaliza energia cuando recibe elementos
+      (<span class="label">ngOnChanges</span>), mantiene su poder durante la detección de nuevos elementos
+      (<span class="label">ngDoCheck</span>, <span class="label">ngAfterViewChecked</span>),
+      y finalmente desaparece cuando lo completas
+      (<span class="label">ngOnDestroy</span>).
+    </p>
+  </div>
+
+  <!-- RIGHT: Exercise -->
+  <div class="excercise">
+    <p class="explanation-text">
+      Usa los botones para interactuar con el hechizo del mago. Observa cómo los contadores
+      de cada hook cambian en tiempo real. Al finalizar el hechizo verás que
+      <span class="label">ngOnDestroy</span> se ejecuta para limpiar los recursos.
+    </p>
+
+    <!-- Control Buttons -->
+    <div class="wizard-controls">
+      <button
+        mat-fab
+        extended
+        [color]="summonWizard ? 'warn' : 'primary'"
+        (click)="toggleWizard()">
+        <mat-icon>{{ summonWizard ? 'close' : 'auto_fix_high' }}</mat-icon>
+        {{ summonWizard ? 'Finalizar Hechizo' : 'Invocar Hechizo' }}
+      </button>
+
+      @if (summonWizard) {
+        <button
+          mat-fab
+          extended
+          color="accent"
+          (click)="channelMana()">
+          <mat-icon>bolt</mat-icon>
+          Añadir Elemento ({{ manaLevel }})
+        </button>
+      }
+    </div>
+
+    <!-- The Wizard Stepper -->
+    @if (summonWizard) {
+      <app-wizard-spell [manaLevel]="manaLevel"></app-wizard-spell>
+    }
+
+    <h3 class="h3-topic">Da un vistazo al código</h3>
+    <p></p>
+    <div class="row-align">
+      <mat-icon svgIcon="angular-blue" class="my-icon">code</mat-icon>
+      spell-summoning-circle.component.ts
+    </div>
+    <div class="row-align">
+      <mat-icon svgIcon="angular-blue" class="my-icon">code</mat-icon>
+      wizard-spell.component.ts
+    </div>
+  </div>
+</div>

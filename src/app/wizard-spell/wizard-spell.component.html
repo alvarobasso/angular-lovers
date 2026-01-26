@@ -4,17 +4,23 @@
   <mat-step>
     <ng-template matStepLabel>
       🧩 Creation Phase<br />
-      <small>
-        constructor() · ngOnInit()
-      </small>
+      <small>constructor() · ngOnInit()</small>
     </ng-template>
 
     <p>🧙 The wizard is summoned.</p>
 
-    <ul>
-      <li>constructor(): {{ constructorRuns }} (ONCE)</li>
-      <li>ngOnInit(): {{ onInitRuns }} (ONCE)</li>
-    </ul>
+    <div class="hook-list">
+      <div class="hook-item">
+        <span class="hook-name">constructor()</span>
+        <span class="hook-count">{{ constructorRuns }}</span>
+        <span class="hook-tag once">ONCE</span>
+      </div>
+      <div class="hook-item">
+        <span class="hook-name">ngOnInit()</span>
+        <span class="hook-count">{{ onInitRuns }}</span>
+        <span class="hook-tag once">ONCE</span>
+      </div>
+    </div>
 
     <p class="hint">
       ❌ These hooks never run again unless the component is recreated.
@@ -27,26 +33,27 @@
   <mat-step>
     <ng-template matStepLabel>
       🔁 Input Phase<br />
-      <small>
-        ngOnChanges()
-      </small>
+      <small>ngOnChanges()</small>
     </ng-template>
 
-    <p>⚡ Changing an @Input triggers ngOnChanges.</p>
+    <p>⚡ Changing an &#64;Input triggers ngOnChanges.</p>
 
-    <button
-      mat-fab
-      extended
-      color="accent"
-      (click)="manaLevel = manaLevel + 1">
-      <mat-icon>bolt</mat-icon>
-      Channel Mana
-    </button>
+    <div class="hook-list">
+      <div class="hook-item highlight">
+        <span class="hook-name">Mana Level</span>
+        <span class="hook-count">{{ manaLevel }}</span>
+        <span class="hook-tag input">&#64;Input</span>
+      </div>
+      <div class="hook-item highlight">
+        <span class="hook-name">ngOnChanges()</span>
+        <span class="hook-count">{{ onChangesRuns }}</span>
+        <span class="hook-tag multi">MULTI</span>
+      </div>
+    </div>
 
-    <ul>
-      <li>Mana Level: {{ manaLevel }}</li>
-      <li>ngOnChanges(): {{ onChangesRuns }}</li>
-    </ul>
+    <p class="hint">
+      👆 Use the "Channel Mana" button above to increase the mana level and trigger ngOnChanges.
+    </p>
 
     <button mat-button matStepperNext>Next</button>
   </mat-step>
@@ -55,21 +62,31 @@
   <mat-step>
     <ng-template matStepLabel>
       👁 Change Detection Phase<br />
-      <small>
-        ngDoCheck() · ngAfterViewInit() · ngAfterViewChecked()
-      </small>
+      <small>ngDoCheck() · ngAfterViewInit() · ngAfterViewChecked()</small>
     </ng-template>
 
     <p>👁 Angular checks the view constantly.</p>
 
-    <ul>
-      <li>ngDoCheck(): {{ doCheckRuns }}</li>
-      <li>ngAfterViewInit(): {{ afterViewInitRuns }} (ONCE)</li>
-      <li>ngAfterViewChecked(): {{ afterViewCheckedRuns }}</li>
-    </ul>
+    <div class="hook-list">
+      <div class="hook-item">
+        <span class="hook-name">ngDoCheck()</span>
+        <span class="hook-count">{{ doCheckRuns }}</span>
+        <span class="hook-tag multi">MULTI</span>
+      </div>
+      <div class="hook-item">
+        <span class="hook-name">ngAfterViewInit()</span>
+        <span class="hook-count">{{ afterViewInitRuns }}</span>
+        <span class="hook-tag once">ONCE</span>
+      </div>
+      <div class="hook-item">
+        <span class="hook-name">ngAfterViewChecked()</span>
+        <span class="hook-count">{{ afterViewCheckedRuns }}</span>
+        <span class="hook-tag multi">MULTI</span>
+      </div>
+    </div>
 
     <p class="hint">
-      These hooks fire on every change detection cycle.
+      These hooks fire on every change detection cycle. Notice how the counters keep increasing!
     </p>
 
     <button mat-button matStepperNext>Next</button>
@@ -79,16 +96,23 @@
   <mat-step>
     <ng-template matStepLabel>
       💥 Destruction Phase<br />
-      <small>
-        ngOnDestroy()
-      </small>
+      <small>ngOnDestroy()</small>
     </ng-template>
 
     <p>💥 The wizard fades away.</p>
 
-    <ul>
-      <li>ngOnDestroy(): {{ onDestroyRuns }}</li>
-    </ul>
+    <div class="hook-list">
+      <div class="hook-item warn">
+        <span class="hook-name">ngOnDestroy()</span>
+        <span class="hook-count">{{ onDestroyRuns }}</span>
+        <span class="hook-tag once">ONCE</span>
+      </div>
+    </div>
+
+    <p class="hint">
+      👆 Click "Dismiss Wizard" to destroy the component and see ngOnDestroy fire.
+      Then summon the wizard again to see the full cycle!
+    </p>
 
   </mat-step>
 

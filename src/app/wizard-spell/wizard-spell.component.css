@@ -1,24 +1,89 @@
-.ritual-stepper {
-  max-width: 700px;
-  margin: auto;
-}
-
-.step-content {
-  text-align: center;
-}
-
-.icon-big {
-  width: 180px;
-  margin: 16px auto;
-}
-
-.step-actions {
+/* Hook List Container */
+.hook-list {
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
 }
 
-.ritual-controls {
-  margin-top: 24px;
+/* Hook Item Row */
+.hook-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  border-left: 4px solid #004f4f;
+}
+
+.hook-item.highlight {
+  background: #fff8e1;
+  border-left-color: #ff9800;
+}
+
+.hook-item.warn {
+  background: #ffebee;
+  border-left-color: #f44336;
+}
+
+/* Hook Name */
+.hook-name {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #333;
+  flex: 1;
+}
+
+/* Hook Count */
+.hook-count {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #004f4f;
+  min-width: 40px;
   text-align: center;
+}
+
+.hook-item.highlight .hook-count {
+  color: #e65100;
+}
+
+.hook-item.warn .hook-count {
+  color: #c62828;
+}
+
+/* Hook Tags */
+.hook-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.hook-tag.once {
+  background: #e0f7fa;
+  color: #00695c;
+}
+
+.hook-tag.multi {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.hook-tag.input {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+/* Hint Text */
+.hint {
+  color: #666;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 16px 0;
+  padding: 10px 14px;
+  background: #fafafa;
+  border-left: 3px solid #004f4f;
+  border-radius: 0 8px 8px 0;
 }

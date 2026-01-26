@@ -1,0 +1,8 @@
+/* Wizard Control Buttons */
+.wizard-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
