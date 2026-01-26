@@ -1,0 +1,13 @@
+<button
+  mat-fab
+  extended
+  color="warn"
+  (click)="toggleWizard()">
+
+  <mat-icon>{{ summonWizard ? 'close' : 'auto_fix_high' }}</mat-icon>
+  {{ summonWizard ? 'Dismiss Wizard' : 'Summon Wizard' }}
+</button>
+
+<br /><br />
+
+<app-wizard-spell *ngIf="summonWizard"></app-wizard-spell>

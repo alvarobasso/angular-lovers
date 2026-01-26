@@ -1,0 +1,95 @@
+<mat-vertical-stepper>
+
+  <!-- 🧩 STEP 1 -->
+  <mat-step>
+    <ng-template matStepLabel>
+      🧩 Creation Phase<br />
+      <small>
+        constructor() · ngOnInit()
+      </small>
+    </ng-template>
+
+    <p>🧙 The wizard is summoned.</p>
+
+    <ul>
+      <li>constructor(): {{ constructorRuns }} (ONCE)</li>
+      <li>ngOnInit(): {{ onInitRuns }} (ONCE)</li>
+    </ul>
+
+    <p class="hint">
+      ❌ These hooks never run again unless the component is recreated.
+    </p>
+
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
+  <!-- 🔁 STEP 2 -->
+  <mat-step>
+    <ng-template matStepLabel>
+      🔁 Input Phase<br />
+      <small>
+        ngOnChanges()
+      </small>
+    </ng-template>
+
+    <p>⚡ Changing an @Input triggers ngOnChanges.</p>
+
+    <button
+      mat-fab
+      extended
+      color="accent"
+      (click)="manaLevel = manaLevel + 1">
+      <mat-icon>bolt</mat-icon>
+      Channel Mana
+    </button>
+
+    <ul>
+      <li>Mana Level: {{ manaLevel }}</li>
+      <li>ngOnChanges(): {{ onChangesRuns }}</li>
+    </ul>
+
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
+  <!-- 👁 STEP 3 -->
+  <mat-step>
+    <ng-template matStepLabel>
+      👁 Change Detection Phase<br />
+      <small>
+        ngDoCheck() · ngAfterViewInit() · ngAfterViewChecked()
+      </small>
+    </ng-template>
+
+    <p>👁 Angular checks the view constantly.</p>
+
+    <ul>
+      <li>ngDoCheck(): {{ doCheckRuns }}</li>
+      <li>ngAfterViewInit(): {{ afterViewInitRuns }} (ONCE)</li>
+      <li>ngAfterViewChecked(): {{ afterViewCheckedRuns }}</li>
+    </ul>
+
+    <p class="hint">
+      These hooks fire on every change detection cycle.
+    </p>
+
+    <button mat-button matStepperNext>Next</button>
+  </mat-step>
+
+  <!-- 💥 STEP 4 -->
+  <mat-step>
+    <ng-template matStepLabel>
+      💥 Destruction Phase<br />
+      <small>
+        ngOnDestroy()
+      </small>
+    </ng-template>
+
+    <p>💥 The wizard fades away.</p>
+
+    <ul>
+      <li>ngOnDestroy(): {{ onDestroyRuns }}</li>
+    </ul>
+
+  </mat-step>
+
+</mat-vertical-stepper>

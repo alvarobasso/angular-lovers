@@ -2,10 +2,17 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'potion-lab',
+    path: 'potions-store',
     loadComponent: () =>
       import('./potions-store/potions-store.component').then(
-        (m) => m.PotionsStoreComponent
+        (component) => component.PotionsStoreComponent
+      ),
+  },
+  {
+    path: 'wizard-spell',
+    loadComponent: () =>
+      import('./wizard-spell/spell-summoning-circle.component').then(
+        (component) => component.SpellSummoningCircleComponent
       ),
   },
 ];

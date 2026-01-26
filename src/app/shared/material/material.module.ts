@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
     CommonModule,
     MatMenuModule,
     MatListModule,
+    MatStepperModule,
   ],
   imports: [
     MatDividerModule,
@@ -23,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
     CommonModule,
     MatMenuModule,
     MatListModule,
+    MatStepperModule,
   ],
 })
 export class MaterialModule {}

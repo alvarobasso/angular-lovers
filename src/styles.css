@@ -15,6 +15,16 @@ body {
     font-family: var(--font-body);
 }
 
+.mat-stepper-vertical{
+    background-color: transparent!important;
+    box-shadow: none;
+    color: #000!important;
+}
+
+.mat-step-text-label{
+    color: #000!important;
+}
+
 h1,
 h2,
 h3,
